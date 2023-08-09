@@ -2,6 +2,8 @@ package com.hreshi.identity;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -110,6 +112,7 @@ public class Contact implements Comparable<Contact>{
     public void setDeletedAt(LocalDateTime deletedAt) {
         this.deletedAt = deletedAt;
     }
+    @JsonIgnore
     public boolean isPrimary() {
         return "primary".equals(linkPrecedence);
     }
