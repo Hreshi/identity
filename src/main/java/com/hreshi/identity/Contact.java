@@ -8,7 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Contact {
+public class Contact implements Comparable<Contact>{
 
     @Override
     public int hashCode() {
@@ -44,10 +44,10 @@ public class Contact {
     }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String phoneNumber;
     private String email;
-    private int linkedId;
+    private Integer linkedId;
     private String linkPrecedence;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -59,6 +59,8 @@ public class Contact {
     public Contact(UserData data) {
         this.email = data.getEmail();
         this.phoneNumber = data.getPhoneNumber();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
     public int getId() {
         return id;
@@ -78,10 +80,10 @@ public class Contact {
     public void setEmail(String email) {
         this.email = email;
     }
-    public int getLinkedId() {
+    public Integer getLinkedId() {
         return linkedId;
     }
-    public void setLinkedId(int linkedId) {
+    public void setLinkedId(Integer linkedId) {
         this.linkedId = linkedId;
     }
     public String getLinkPrecedence() {
@@ -110,6 +112,11 @@ public class Contact {
     }
     public boolean isPrimary() {
         return "primary".equals(linkPrecedence);
+    }
+    @Override
+    public int compareTo(Contact other) {
+        if(other == null) return -1;
+        return this.createdAt.compareTo(other.getCreatedAt());
     }
 
 }

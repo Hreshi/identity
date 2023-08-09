@@ -15,9 +15,9 @@ public class ContactController {
     @Autowired ContactService contactService;
     
     @PostMapping("/identify")
-    public ResponseEntity<Contact> identifyUser(@RequestBody UserData userData) {
-        Contact contact = contactService.saveContact(userData);
-        return ResponseEntity.ok(contact);
+    public ResponseEntity<Result> identifyUser(@RequestBody UserData userData) {
+        Result result = contactService.handle(userData);
+        return ResponseEntity.ok(result);
     }
 
     @GetMapping("/")

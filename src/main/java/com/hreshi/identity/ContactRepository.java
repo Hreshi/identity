@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 public interface ContactRepository extends CrudRepository<Contact, Integer>{
     List<Contact> findAll();
 
-    Contact findByEmail(String email);
+    Contact findFirstByEmail(String email);
 
-    Contact findByPhoneNumber(String phoneNumber);
+    Contact findFirstByPhoneNumber(String phoneNumber);
 
     List<Contact> findAllByLinkedId(int id);
 

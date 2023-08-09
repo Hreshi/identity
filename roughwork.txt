@@ -1,0 +1,6 @@
+
+
+[1] Email and PhoneNumber
+    1. Find primary contact associated with email and PhoneNumber
+    2. If both are same then there is only one set
+    3. If both are different then unite both sets
