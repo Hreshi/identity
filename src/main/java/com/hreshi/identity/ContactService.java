@@ -1,5 +1,6 @@
 package com.hreshi.identity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,4 @@ public class ContactService {
         return contactRepository.findAll();
     }
 
-    public void handle(UserData data) {
-        
-    }
 }
