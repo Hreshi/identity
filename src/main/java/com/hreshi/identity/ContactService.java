@@ -89,7 +89,7 @@ public class ContactService {
         ContactResult result = new ContactResult();
         Set<String> emailSet = new HashSet<>();
         Set<String> phoneNumberSet = new HashSet<>();
-        result.setPrimaryContactId(oldestContact.getId());
+        result.setPrimaryContatctId(oldestContact.getId());
         if(oldestContact.getEmail() != null) {
             result.getEmails().add(oldestContact.getEmail());
             emailSet.add(oldestContact.getEmail());

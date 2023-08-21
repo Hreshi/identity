@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactResult {
-    int primaryContactId;
+    int primaryContatctId;
     List<String> emails;
     List<String> phoneNumbers;
     List<Integer> secondaryContactIds;
@@ -14,11 +14,11 @@ public class ContactResult {
         this.phoneNumbers = new ArrayList<>();
         this.secondaryContactIds = new ArrayList<>();
     }
-    public int getPrimaryContactId() {
-        return primaryContactId;
+    public int getPrimaryContatctId() {
+        return primaryContatctId;
     }
-    public void setPrimaryContactId(int primaryContactId) {
-        this.primaryContactId = primaryContactId;
+    public void setPrimaryContatctId(int primaryContactId) {
+        this.primaryContatctId = primaryContactId;
     }
     public List<String> getEmails() {
         return emails;
