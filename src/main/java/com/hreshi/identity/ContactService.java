@@ -160,4 +160,8 @@ public class ContactService {
         contact = contactRepository.findById(primaryId).get();
         return contact;
     }
+
+    public void deleteEverything() {
+        contactRepository.deleteAll(contactRepository.findAll());
+    }
 }
