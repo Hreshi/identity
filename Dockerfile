@@ -1,6 +1,7 @@
 
 
 FROM openjdk:17-oracle
+COPY . .
 
 RUN ./mvnw clean package
 
